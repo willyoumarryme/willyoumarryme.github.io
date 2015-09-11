@@ -5,25 +5,363 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Teddy's propose.</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/screen.css" media="screen" title="no title">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/javascripts/skrollr.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/jquery.pagepiling.css"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./javascripts/jquery.pagepiling.min.js"></script>
     <script type="text/javascript">
-        window.onload = function() {
-            skrollr.init({
-                forceHeight: true
+        $(document).ready(function () {
+            /*
+             * Plugin intialization
+             */
+            $('#pagepiling').pagepiling({
+                direction: 'vertical',
+                menu: '#menu',
+//                anchors: ['page1', 'page2', 'page3', 'page4'],
+                sectionsColor: [
+                    '#CCFFFF', '#FF9966', '#99FF99', "#FFCCFF", "#99FFCC",
+                    '#FAFABE', '#FFEBF0', '#E8F5FF', "#FFC091", "#EBFFEB",
+                    '#CCFFFF', '#FF9966', '#99FF99', "#FFCCFF", "#99FFCC",
+                    '#FAFABE', '#FFEBF0', '#E8F5FF', "#FFC091", "#EBFFEB",
+                    '#CCFFFF', '#FF9966', '#99FF99', "#FFCCFF", "#99FFCC",
+                    '#FAFABE', '#FFEBF0', '#E8F5FF', "#FFC091", "#EBFFEB",
+                    '#CCFFFF', '#FF9966', '#99FF99', "#FFCCFF", "#99FFCC",
+                    '#FAFABE', '#FFEBF0', '#E8F5FF', "#FFC091", "#EBFFEB",
+                    '#CCFFFF', '#FF9966', '#99FF99', "#FFCCFF", "#99FFCC",
+                    '#FAFABE', '#FFEBF0', '#E8F5FF', "#FFC091", "#EBFFEB",
+                    '#CCFFFF', '#FF9966', '#99FF99', "#FFCCFF", "#99FFCC",
+                    '#FAFABE', '#FFEBF0', '#E8F5FF', "#FFC091", "#EBFFEB"
+                ],
+                navigation: {
+                    'position': 'right',
+//                    'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Pgae 4']
+                },
+                afterRender: function () {
+                    $('#pp-nav').addClass('custom');
+                },
+                afterLoad: function (anchorLink, index) {
+                    if (index > 1) {
+                        $('#pp-nav').removeClass('custom');
+                    } else {
+                        $('#pp-nav').addClass('custom');
+                    }
+                }
             });
-        }
+
+            $('#yes').click(function () {
+                location.href = "index3.html";
+            });
+            $('#no').click(function () {
+                var docHeight = $(document).height(),
+                        docWidth = $(document).width(),
+                        $div = $('#no'),
+                        divWidth = $div.width(),
+                        divHeight = $div.height(),
+                        heightMax = docHeight - divHeight,
+                        widthMax = docWidth - divWidth;
+
+                $div.css({
+                    left: Math.floor(Math.random() * widthMax),
+                    top: Math.floor(Math.random() * heightMax)
+                });
+            });
+        });
     </script>
+
+
+    <style>
+        #section1 {
+            background: #E7685D url('./images/surprise.jpg') center center no-repeat;
+            z-index: 100;
+        }
+
+        /* colors
+         * --------------------------------------- */
+        /*#colors2,*/
+        /*#colors3{*/
+        /*position: absolute;*/
+        /*height: 163px;*/
+        /*width: 362px;*/
+        /*z-index: 1;*/
+        /*background-repeat: no-repeat;*/
+        /*left: 0;*/
+        /*margin: 0 auto;*/
+        /*right: 0;*/
+        /*}*/
+        /*#colors2{*/
+        /*background-image: url(./images/colors2.gif);*/
+        /*top:0;*/
+        /*}*/
+        /*#colors3{*/
+        /*background-image: url(./images/colors3.gif);*/
+        /*bottom:0;*/
+        /*}*/
+
+        /* Overwriting fullPage.js tooltip color
+        * --------------------------------------- */
+        #pp-nav.custom .pp-tooltip {
+            color: #AAA;
+        }
+
+        .intro {
+            align-content: center;
+        }
+
+        .center {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h1 {
+            font-size: 5em;
+        }
+
+        #no {
+            color: #FF0000;
+            position: absolute;
+            width: 200px;
+            height: 100px;
+        }
+
+        .grid li span {
+            display: inline-block;
+            font-weight: 900;
+            line-height: 1;
+            position: relative;
+            color: hsla(0, 0%, 0%, 0.6);
+            transform-style: preserve-3d;
+            perspective: 550px;
+            z-index: 1;
+        }
+
+        .grid li span:before,
+        .grid li span:after {
+            position: absolute;
+            content: attr(data-letter);
+            line-height: inherit;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .grid li span:before {
+            text-shadow: none;
+            color: hsla(0, 0%, 0%, 0.12);
+        }
+        .ot-letter-left span:before,
+        .ot-letter-left span:after {
+            transform-origin: 0 50%;
+        }
+
+        .ot-letter-left span:before {
+            transform: scale(1.08, 1) skew(0deg, 1deg);
+        }
+
+        .ot-letter-left span:after {
+            text-shadow:
+            -1px 0px 0px hsla(360, 100%, 100%, 0.1),
+            3px 0px 1px hsla(0, 0%, 0%, 0.4);
+            transform: rotateY(-15deg);
+        }
+
+        .ot-letter-left:hover span:before {
+            transform: scale(0.85,1) skew(0deg,20deg);
+        }
+
+        .ot-letter-left:hover span:after {
+            transform: rotateY(-40deg);
+        }
+        .ot-letter-left {
+            background: #e74d3c;
+        }
+
+        .ot-letter-left span {
+            text-shadow:
+            1px 4px 6px #e74d3c,
+            0 0 0 hsla(0, 0%, 0%, 0.3),
+            1px 4px 6px #e74d3c;
+        }
+
+        .ot-letter-left span:after {
+            color: #e74d3c;
+        }
+
+        .ot-letter-left:hover span:after {
+            color: #ea6253;
+        }
+
+        .ot-letter-bottom span:before,
+        .ot-letter-bottom span:after {
+            transform-origin: 50% 0;
+        }
+
+        .ot-letter-bottom span:before {
+            transform: scale(1,1.05) skew(4deg,0deg);
+        }
+
+        .ot-letter-bottom span:after {
+            text-shadow:
+            0px -1px 0px hsla(360, 100%, 100%, 0.1),
+            0px 3px 1px hsla(0, 0%, 0%, 0.4);
+            transform: rotateX(15deg);
+        }
+
+        .ot-letter-bottom:hover span:before {
+            transform: translateY(-0.035em) scale(1,1.2) skew(10deg,0deg);
+        }
+
+        .ot-letter-bottom:hover span:after {
+            transform: translateY(0.045em) rotateX(40deg);
+        }
+    </style>
+
 </head>
 <body>
-<div id="skrollr-body">
-    <div id="wish1" class="centered" data-0="height:100%;" data-1000="height:0%;"></div>
-    <div id="wish2" class="centered" data-1000="width:100%;" data-2000="width:0%;"></div>
-    <div id="wish3" class="centered" data-2000="width:0px;height:0px;" data-6000="width:700px;height:700px;"></div>
+<div id="pagepiling">
+    <div class="section" id="section1">
+        <!--<div class="center">-->
+            <!--<ul class="grid">-->
+                <!--<li class="ot-letter-left"><span data-letter="S">S</span></li>-->
+                <!--<li class="ot-letter-top"><span data-letter="U">U</span></li>-->
+                <!--<li class="ot-letter-top"><span data-letter="R">R</span></li>-->
+                <!--<li class="ot-letter-right"><span data-letter="P">P</span></li>-->
+                <!--<li class="ot-letter-bottom"><span data-letter="A">A</span></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>안녕..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>난 기원이라고 해..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>만나서 방가방가~~!ㅎㅎ</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>이걸 보고 있을 때쯤이면</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>벌써 우리 결혼이 많이 가까워졌겠다..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>사실 제대로 된 프로포즈도 못하고</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>뭔가 아쉽기도 하고</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>어떻게 프로포즈를 할까 하다가</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>이런건 어떨까 한번 생각해 봤는데..ㅎㅎ</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>너무 실망하지 않아야 할텐데..</h1>
+            <img src="./images/20150911_201304.png" style="width: 30%; height: 30%;"/>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>우리가 만난지도 꽤 오랜 시간이 흘렀네..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>같이 웨딩 영상 사진 둘러 볼 때도 그랬잖아</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>참 그동안 많은 일들을 함께 했구나 하는걸 새삼 느낀다고..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>싸우기도 많이하고 재밌던 일도 많고</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>성격이 참 다른 걸 알면서도</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>한편으로는 잘 맞는 부분도 있고</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>특히 이런거~</h1>
+            <img src="./images/20150911_212051.png" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>그러다가 결국 결혼까지 하게 됬네..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>참 세월이 야속해~</h1>
+            <img src="./images/20150911_211744.png" style="width: 30%; height: 30%;"/>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="center">
+            <h1>나랑 결혼해 줄래?</h1>
+
+            <div id="yes"><h1>Yes</h1></div>
+            <div id="no"><h1>No</h1></div>
+        </div>
+    </div>
 </div>
-
-
 </body>
 </html>
