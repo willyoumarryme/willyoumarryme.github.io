@@ -10,8 +10,8 @@ body {overflow:auto; height:100000px; }
 
 .centered { top:0; bottom:0; left:0; right:0; margin:auto; }
 
-#wish1 {background: #E7685D url('../imgs/slide1.png') center center no-repeat ; z-index:3;}
+#wish1 {background: #E7685D url('/images/slide1.png') center center no-repeat ; z-index:3;}
 
-#wish2 {background: #94C3B6 url('../imgs/slide2.png') center center no-repeat ; z-index:2;}
+#wish2 {background: #94C3B6 url('/images/slide2.png') center center no-repeat ; z-index:2;}
 
-#wish3 {background:#8DBAAE url('../imgs/slide3.png') no-repeat center center; z-index:1; border-radius:50%;}
+#wish3 {background:#8DBAAE url('/images/slide3.png') no-repeat center center; z-index:1; border-radius:50%;}

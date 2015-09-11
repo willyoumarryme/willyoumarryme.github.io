@@ -6,8 +6,16 @@
     <title>Teddy's propose.</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="css/screen.css" media="screen" title="no title">
+    <link rel="stylesheet" href="/stylesheets/screen.css" media="screen" title="no title">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/javascripts/skrollr.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            skrollr.init({
+                forceHeight: true
+            });
+        }
+    </script>
 </head>
 <body>
 <div id="skrollr-body">
@@ -16,13 +24,6 @@
     <div id="wish3" class="centered" data-2000="width:0px;height:0px;" data-6000="width:700px;height:700px;"></div>
 </div>
 
-<script src="js/skrollr.js"></script>
-<script type="text/javascript">
-    window.onload = function() {
-        skrollr.init({
-            forceHeight: true
-        });
-    }
-</script>
+
 </body>
 </html>
