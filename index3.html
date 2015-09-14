@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Merry Christmas - Merry Scroll</title>
+    <title>propose</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
-        //http://detectmobilebrowsers.com/ + tablets
         (function (a) {
             if (/android|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(ad|hone|od)|iris|kindle|lge |maemo|meego.+mobile|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino|playbook|silk/i.test(a)
                     ||
@@ -12,6 +12,11 @@
                 window.location = "mobile.html"
             }
         })(navigator.userAgent || navigator.vendor || window.opera);
+
+        $(document).ready(function () {
+            $("#skrollr-body").hide();
+            $("#skrollr-body").fadeIn(1000);
+        });
     </script>
     <style>
         #preloader {
@@ -24,8 +29,7 @@
             z-index: 1000;
         }
     </style>
-    <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen" title="no title"
-          charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 
 <body>
@@ -49,7 +53,10 @@
     </svg>
     <div id="pattern1" class="centered " data-2500=" height:100%; " data-3500="height:0%;"></div>
     <div id="pattern2" class="centered"></div>
-    <div id="wish3" class="centered" data-4000="width:0px; height:0px;  " data-6000="width:790px; height:490px; "></div>
+    <div id="wish3" class="centered" data-4000="width:0px; height:0px;" data-6000="width:790px; height:490px; " data-8000="width:0px; height:0px; "></div>
+    <div id="wish4" class="centered" data-7000="width:790px; height:490px; " data-9000="width:0px; height:0px; "></div>
+    <!--<div id="wish4" class="centered" data-6000="width:790px; height:490px;" data-8000="width:0px; height:0px; "></div>-->
+    <!--<div id="wish4" class="centered" data-6000="width:0px; height:0px;  " data-8000="width:790px; height:490px; "></div>-->
 </div>
 
 <script src="javascripts/skrollr.js" type="text/javascript" charset="utf-8"></script>

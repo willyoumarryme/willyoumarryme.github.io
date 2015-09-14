@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Teddy's propose.</title>
+    <title>propose</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="page-enter" content="blendtrans(duration=0.2)" charset="utf-8">
+    <meta http-equiv="page-exit" content="blendtrans(duration=0.2)" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./stylesheets/jquery.pagepiling.css"/>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="./javascripts/jquery.pagepiling.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             /*
@@ -66,13 +68,32 @@
                     top: Math.floor(Math.random() * heightMax)
                 });
             });
+
+            $( "#no" ).mouseover(function() {
+                var docHeight = $(document).height(),
+                        docWidth = $(document).width(),
+                        $div = $('#no'),
+                        divWidth = $div.width(),
+                        divHeight = $div.height(),
+                        heightMax = docHeight - divHeight,
+                        widthMax = docWidth - divWidth;
+
+                $div.css({
+                    left: Math.floor(Math.random() * widthMax),
+                    top: Math.floor(Math.random() * heightMax)
+                });
+            });
+
+            $('#video1').on('canplaythrough', function() {
+                this.play();
+            });
         });
     </script>
 
 
     <style>
         #section1 {
-            background: #E7685D url('./images/surprise.jpg') center center no-repeat;
+            background: #000000 center center repeat;
             z-index: 100;
         }
 
@@ -221,17 +242,12 @@
 
 </head>
 <body>
+<div data-role="page">
 <div id="pagepiling">
     <div class="section" id="section1">
-        <!--<div class="center">-->
-            <!--<ul class="grid">-->
-                <!--<li class="ot-letter-left"><span data-letter="S">S</span></li>-->
-                <!--<li class="ot-letter-top"><span data-letter="U">U</span></li>-->
-                <!--<li class="ot-letter-top"><span data-letter="R">R</span></li>-->
-                <!--<li class="ot-letter-right"><span data-letter="P">P</span></li>-->
-                <!--<li class="ot-letter-bottom"><span data-letter="A">A</span></li>-->
-            <!--</ul>-->
-        <!--</div>-->
+        <div class="center black">
+            <h1>Programmer's story..</h1>
+        </div>
     </div>
     <div class="section">
         <div class="center">
@@ -265,49 +281,80 @@
     </div>
     <div class="section">
         <div class="center">
-            <h1>뭔가 아쉽기도 하고</h1>
+            <h1>시도를 했지만 실패해서..</h1>
+            <img src="images/20150911_201321.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>어떻게 프로포즈를 할까 하다가</h1>
+            <h1>아쉽기도 하고</h1>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>이런건 어떨까 한번 생각해 봤는데..ㅎㅎ</h1>
+            <h1>그래서 작은 이벤트를 <br/>준비해 볼까 생각하다..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>준비해 봤는데..ㅎㅎ</h1>
+            <img src="images/20150911_201242.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>너무 실망하지 않아야 할텐데..</h1>
-            <img src="./images/20150911_201304.png" style="width: 30%; height: 30%;"/>
+            <img src="images/20150911_201304.png" style="width: 30%; height: 30%;"/>
 
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>우리가 만난지도 꽤 오랜 시간이 흘렀네..</h1>
+            <h1>우리가 만난지도 <br/>꽤 오랜 시간이 흘렀네..</h1>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>같이 웨딩 영상 사진 둘러 볼 때도 그랬잖아</h1>
+            <h1>전에 사진 정리하면서도..</h1>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>참 그동안 많은 일들을 함께 했구나 하는걸 새삼 느낀다고..</h1>
+            <h1>우리가 같이 지낸 동안..</h1>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>싸우기도 많이하고 재밌던 일도 많고</h1>
+            <h1>함께 많은 것을 나눴구나라고 했잖아..</h1>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>성격이 참 다른 걸 알면서도</h1>
+            <h1>이런 일도</h1>
+            <video id="video1" controls muted loop autoplay>
+                <source src="images/flowers.mp4" type="video/mp4">
+                sorry..
+            </video>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>저런 일도</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>싸우기도 많이하고</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>재밌던 일도 많고</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>성격이 참 다른걸 알면서도</h1>
         </div>
     </div>
     <div class="section">
@@ -323,45 +370,106 @@
     </div>
     <div class="section">
         <div class="center">
-            <h1>그러다가 결국 결혼까지 하게 됬네..</h1>
+            <h1>그러다가 결국 <br/>여기까지 오게 되었네..</h1>
+            <img src="./images/tumblr_inline_nhxz5aMAQV1s9j00z.gif" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>참 세월이 야속해~</h1>
-            <img src="./images/20150911_211744.png" style="width: 30%; height: 30%;"/>
+            <h1>돌이켜보면 <br/>얼마 안된것 같은데 말야ㅎ</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>이제 앞으로 더 많은 시간을 <br/>함께하게 되겠지?</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>서로 같은 곳을 보며</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>이렇게 늙을 때 까지 말야</h1>
+            <img src="./images/20150914_183511.png" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>이 남자처럼 멋지진 않지만</h1>
+            <img src="./images/20150914_170448.png" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>또, 앞으로 이렇게 변할지도 모르지만</h1>
+            <img src="./images/비만.jpg" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>그래도 너에게 만은 <br/>최고의 남자가 될 수 있게 <br/>노력할게~</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>좀 모자라더라도 <br/>조금 이해해주고~</h1>
+            <img src="./images/20150911_201420.png" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>앞으로 슬퍼하는 일 없이..</h1>
+            <img src="./images/f0041321_55a8b47563281.png" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1></h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>안성숙씨...</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <img src="./images/20150914_155759.png" style="width: 30%; height: 30%;"/>
+        </div>
+    </div>
 
-        </div>
-    </div>
     <div class="section">
         <div class="center">
-            <h1></h1>
-        </div>
-    </div>
-    <div class="section">
-        <div class="center">
-            <h1></h1>
-        </div>
-    </div>
-    <div class="section">
-        <div class="center">
-            <h1></h1>
-        </div>
-    </div>
-    <div class="section">
-        <div class="center">
-            <h1></h1>
+            <h1>당신을 생각하면 항상 웃음이 나고 행복합니다.</h1>
         </div>
     </div>
 
     <div class="section">
         <div class="center">
-            <h1>나랑 결혼해 줄래?</h1>
+            <h1>나랑 결혼해 줄래요?</h1>
 
             <div id="yes"><h1>Yes</h1></div>
             <div id="no"><h1>No</h1></div>
         </div>
     </div>
 </div>
+    </div>
 </body>
 </html>
