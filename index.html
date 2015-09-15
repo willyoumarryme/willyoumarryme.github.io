@@ -6,8 +6,6 @@
     <title>propose</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-    <meta http-equiv="page-enter" content="blendtrans(duration=0.2)" charset="utf-8">
-    <meta http-equiv="page-exit" content="blendtrans(duration=0.2)" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./stylesheets/jquery.pagepiling.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="./javascripts/jquery.pagepiling.min.js"></script>
@@ -54,7 +52,8 @@
             $('#yes').click(function () {
                 location.href = "index3.html";
             });
-            $('#no').click(function () {
+            var noButton = $('#no');
+            noButton.click(function () {
                 var docHeight = $(document).height(),
                         docWidth = $(document).width(),
                         $div = $('#no'),
@@ -68,8 +67,7 @@
                     top: Math.floor(Math.random() * heightMax)
                 });
             });
-
-            $("#no").mouseover(function () {
+            noButton.mouseover(function () {
                 var docHeight = $(document).height(),
                         docWidth = $(document).width(),
                         $div = $('#no'),
@@ -87,15 +85,20 @@
             $('#video1').on('canplaythrough', function () {
                 this.play();
             });
+            $('#video2').on('canplaythrough', function () {
+                this.play();
+            });
+            $('#video3').on('canplaythrough', function () {
+                this.play();
+            });
         });
     </script>
 
-
     <style>
-        #section1 {
-            background: #000000 center center repeat;
-            z-index: 100;
-        }
+        /*#section1 {*/
+            /*background: #000000 center center repeat;*/
+            /*z-index: 100;*/
+        /*}*/
 
         /* colors
          * --------------------------------------- */
@@ -124,11 +127,6 @@
         #pp-nav.custom .pp-tooltip {
             color: #AAA;
         }
-
-        .intro {
-            align-content: center;
-        }
-
         .center {
             text-align: center;
             vertical-align: middle;
@@ -145,105 +143,14 @@
             height: 100px;
         }
 
-        .grid li span {
-            display: inline-block;
-            font-weight: 900;
-            line-height: 1;
-            position: relative;
-            color: hsla(0, 0%, 0%, 0.6);
-            transform-style: preserve-3d;
-            perspective: 550px;
-            z-index: 1;
-        }
 
-        .grid li span:before,
-        .grid li span:after {
-            position: absolute;
-            content: attr(data-letter);
-            line-height: inherit;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
-            transition: all 0.3s;
-        }
-
-        .grid li span:before {
-            text-shadow: none;
-            color: hsla(0, 0%, 0%, 0.12);
-        }
-
-        .ot-letter-left span:before,
-        .ot-letter-left span:after {
-            transform-origin: 0 50%;
-        }
-
-        .ot-letter-left span:before {
-            transform: scale(1.08, 1) skew(0deg, 1deg);
-        }
-
-        .ot-letter-left span:after {
-            text-shadow: -1px 0px 0px hsla(360, 100%, 100%, 0.1),
-            3px 0px 1px hsla(0, 0%, 0%, 0.4);
-            transform: rotateY(-15deg);
-        }
-
-        .ot-letter-left:hover span:before {
-            transform: scale(0.85, 1) skew(0deg, 20deg);
-        }
-
-        .ot-letter-left:hover span:after {
-            transform: rotateY(-40deg);
-        }
-
-        .ot-letter-left {
-            background: #e74d3c;
-        }
-
-        .ot-letter-left span {
-            text-shadow: 1px 4px 6px #e74d3c,
-            0 0 0 hsla(0, 0%, 0%, 0.3),
-            1px 4px 6px #e74d3c;
-        }
-
-        .ot-letter-left span:after {
-            color: #e74d3c;
-        }
-
-        .ot-letter-left:hover span:after {
-            color: #ea6253;
-        }
-
-        .ot-letter-bottom span:before,
-        .ot-letter-bottom span:after {
-            transform-origin: 50% 0;
-        }
-
-        .ot-letter-bottom span:before {
-            transform: scale(1, 1.05) skew(4deg, 0deg);
-        }
-
-        .ot-letter-bottom span:after {
-            text-shadow: 0px -1px 0px hsla(360, 100%, 100%, 0.1),
-            0px 3px 1px hsla(0, 0%, 0%, 0.4);
-            transform: rotateX(15deg);
-        }
-
-        .ot-letter-bottom:hover span:before {
-            transform: translateY(-0.035em) scale(1, 1.2) skew(10deg, 0deg);
-        }
-
-        .ot-letter-bottom:hover span:after {
-            transform: translateY(0.045em) rotateX(40deg);
-        }
     </style>
 
 </head>
 <body>
 <div id="pagepiling">
-    <div class="section" id="section1">
-        <div class="center black">
+    <div class="section">
+        <div class="center">
             <h1>Programmer's story..</h1>
         </div>
     </div>
@@ -260,6 +167,7 @@
     <div class="section">
         <div class="center">
             <h1>만나서 방가방가~~!ㅎㅎ</h1>
+            <img src="images/20150915_154041.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
@@ -270,6 +178,7 @@
     <div class="section">
         <div class="center">
             <h1>벌써 우리 결혼이 많이 가까워졌겠다..</h1>
+            <img src="images/20150915_154147.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
@@ -280,30 +189,31 @@
     <div class="section">
         <div class="center">
             <h1>시도를 했지만 실패해서..</h1>
-            <img src="images/20150911_201321.png" style="width: 30%; height: 30%;"/>
+            <img src="images/20150915_153413.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>아쉽기도 하고</h1>
+            <img src="images/20150915_153518.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>그래서 작은 이벤트를 <br/>준비해 볼까 생각하다..</h1>
+            <h1>그래서 이벤트를 <br/>생각하다..</h1>
+            <img src="images/20150915_153936.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>준비해 봤는데..ㅎㅎ</h1>
-            <img src="images/20150911_201242.png" style="width: 30%; height: 30%;"/>
+            <img src="images/20150915_153818.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>너무 실망하지 않아야 할텐데..</h1>
-            <img src="images/20150911_201304.png" style="width: 30%; height: 30%;"/>
-
+            <img src="images/20150915_154405.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
@@ -314,6 +224,7 @@
     <div class="section">
         <div class="center">
             <h1>전에 사진 정리하면서도..</h1>
+            <img src="images/20150915_154509.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
@@ -323,31 +234,25 @@
     </div>
     <div class="section">
         <div class="center">
-            <h1>함께 많은 것을 나눴구나라고 했잖아..</h1>
-        </div>
-    </div>
-    <div class="section">
-        <div class="center">
-            <h1>이런 일도</h1>
-            <video id="video1" controls muted loop autoplay>
-                <source src="images/flowers.mp4" type="video/mp4">
-                sorry..
-            </video>
-        </div>
-    </div>
-    <div class="section">
-        <div class="center">
-            <h1>저런 일도</h1>
+            <h1>함께 많은 것을 <br/>나눴구나 라고 했잖아..</h1>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>싸우기도 많이하고</h1>
+            <video id="video2"  controls muted loop autoplay>
+                <source src="images/IMG_6081.m4v">
+                sorry...
+            </video>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>재밌던 일도 많고</h1>
+            <video id="video3" controls muted loop autoplay>
+                <source src="images/IMG_5882.m4v">
+                sorry...
+            </video>
         </div>
     </div>
     <div class="section">
@@ -358,6 +263,7 @@
     <div class="section">
         <div class="center">
             <h1>한편으로는 잘 맞는 부분도 있고</h1>
+            <img src="images/20150915_154629.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
@@ -374,7 +280,7 @@
     </div>
     <div class="section">
         <div class="center">
-            <h1>돌이켜보면 <br/>얼마 안된것 같은데 말야ㅎ</h1>
+            <h1>돌이켜보면 <br/>얼마 안된것 같은데 말야..</h1>
         </div>
     </div>
     <div class="section">
@@ -385,6 +291,7 @@
     <div class="section">
         <div class="center">
             <h1>서로 같은 곳을 보며</h1>
+            <img src="./images/20150915_135926.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
@@ -395,7 +302,7 @@
     </div>
     <div class="section">
         <div class="center">
-            <h1>이 남자처럼 멋지진 않지만</h1>
+            <h1>비록 이 남자처럼 멋지진 않지만</h1>
             <img src="./images/20150914_170448.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
@@ -408,38 +315,41 @@
     <div class="section">
         <div class="center">
             <h1>그래도 너에게 만은 <br/>최고의 남자가 될 수 있게 <br/>노력할게~</h1>
+            <img src="./images/20150915_154838.png" style="width: 30%; height: 30%;"/>
+
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1>좀 모자라더라도 <br/>조금 이해해주고~</h1>
-            <img src="./images/20150911_201420.png" style="width: 30%; height: 30%;"/>
+            <h1>좀 모자라더라도 <br/>많이 이해해주고~</h1>
+            <img src="images/20150911_201420.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
             <h1>앞으로 슬퍼하는 일 없이..</h1>
-            <img src="./images/f0041321_55a8b47563281.png" style="width: 30%; height: 30%;"/>
+            <img src="images/f0041321_55a8b47563281.png" style="width: 30%; height: 30%;"/>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1></h1>
+            <h1>서로 서로 의지 하며..</h1>
+            <video id="video1" controls muted loop autoplay>
+                <source src="images/IMG_5871.m4v">
+                sorry...
+            </video>
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1></h1>
+            <h1>행복하게 살아 봐요!</h1>
+            <img src="images/20150915_142146.png" style="width: 30%; height: 30%;"/>
+
         </div>
     </div>
     <div class="section">
         <div class="center">
-            <h1></h1>
-        </div>
-    </div>
-    <div class="section">
-        <div class="center">
-            <h1></h1>
+            <h1>사랑하는..</h1>
         </div>
     </div>
     <div class="section">
@@ -449,17 +359,43 @@
     </div>
     <div class="section">
         <div class="center">
-            <img src="./images/20150914_155759.png" style="width: 30%; height: 30%;"/>
+            <h1>고맙습니다..<br/>
+            내곁에 있어줘서..</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>당신을 생각하면 <br/>
+                항상 웃음이 나고 행복합니다.</h1>
         </div>
     </div>
 
     <div class="section">
         <div class="center">
-            <h1>당신을 생각하면 <br/>항상 웃음이 나고 행복합니다.</h1>
+            <h1>내가 지은 미소 만큼</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>나도 당신을..
+            </h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="center">
+            <h1>평생 웃게 만들게 줄게요..
+            </h1>
         </div>
     </div>
 
     <div class="section">
+        <div class="center">
+            <h1>사랑합니다.</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <!--<div class="center" style="background: url('images/');">-->
         <div class="center">
             <h1>나랑 결혼해 줄래요?</h1>
             <div id="yes"><h1>Yes</h1></div>
