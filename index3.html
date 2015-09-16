@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="utf-8">
     <title>propose</title>
@@ -16,25 +16,31 @@
         $(document).ready(function () {
             $("#skrollr-body").hide();
             $("#skrollr-body").fadeIn(3000);
+
+            $("#me").fadeIn();
         });
     </script>
     <style>
-        /*#preloader {*/
-            /*background: #89c3b4 url('images/loader.gif') center center no-repeat;*/
-            /*position: fixed;*/
-            /*left: 0px;*/
-            /*top: 0px;*/
-            /*width: 100%;*/
-            /*height: 100%;*/
-            /*z-index: 1000;*/
-        /*}*/
+        #preloader {
+            background: #FFFFFF center center no-repeat;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+        h1 {
+            font-size: 3em;
+
+        }
     </style>
     <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 
 <body>
+<div id="preloader"></div>
 <div id="skrollr-body">
-    <!--<div id="preloader"></div>-->
     <div id="wish1" class="centered" data-0="width:100%;" data-1000="width:0%;"></div>
     <div id="wish2" class="centered " data-1000="width:100%;" data-2000="width:0%;"></div>
     <div id="ribbon-left" class="ribbon" data-1500="width:0%;" data-2500="width:50%;"></div>
@@ -51,16 +57,16 @@
     </svg>
     <div id="pattern1" class="centered " data-2500=" height:100%; " data-3500="height:0%;"></div>
     <div id="pattern2" class="centered"></div>
-    <div id="wish3" class="centered" data-4000="width:0px; height:0px;" data-6000="width:790px; height:490px; "></div>
-    <!--<div id="wish4" class="centered" data-7000="width:790px; height:490px; " data-9000="width:0px; height:0px; "></div>-->
-    <!--<div id="wish4" class="centered" data-6000="width:790px; height:490px;" data-8000="width:0px; height:0px; "></div>-->
-    <!--<div id="wish4" class="centered" data-6000="width:0px; height:0px;  " data-8000="width:790px; height:490px; "></div>-->
+    <div id="wish3" class="centered" data-4000="width:0px; height:0px;" data-6000="width:600px; height:600px; "></div>
+    <div id="wish4" class="centered" data-4000="height:0px;" data-5000="height:600px; ">
+        <h1>사랑합니다..</h1>
+    </div>
 </div>
 
 <script src="javascripts/skrollr.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     window.onload = function () {
-//        document.getElementById("preloader").style.display = 'none';
+        document.getElementById("preloader").style.display = 'none';
         skrollr.init({
             forceHeight: false
         });
